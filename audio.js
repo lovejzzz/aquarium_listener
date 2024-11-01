@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentTrackIndex = 0;
     let rotationAngle = 0; // Track the current rotation angle
     let isRotating = false; // Flag to track rotation state
-    const rotationIncrement = 0.6; // Changed from 2 to 0.6 to slow down rotation speed
+    const rotationIncrement = 0.6; // Set a constant increment for rotation speed
 
     // Function to shuffle the playlist
     function shufflePlaylist() {
@@ -58,11 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
             audio.load();
             audio.play();
             rotationAngle = rotationAngle; // Maintain current rotation angle
-            
-            // Highlight the currently playing track
-            playlistTracks.forEach(t => t.classList.remove('current-track')); // Remove highlight from all tracks
-            track.classList.add('current-track'); // Add highlight to the current track
-
             if (!isRotating) { // Start rotation only if not already rotating
                 isRotating = true; // Set rotation flag
                 rotateDisc(); // Start rotation
