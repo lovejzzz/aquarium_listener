@@ -23,6 +23,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const shuffledPlaylist = shufflePlaylist(); // Shuffle the playlist on load
 
+    // Function to play the next track
+    function playNextTrack() {
+        currentTrackIndex = (currentTrackIndex + 1) % shuffledPlaylist.length; // Loop back to start if at end
+        audioSource.src = shuffledPlaylist[currentTrackIndex].parentElement.getAttribute('data-track');
+        audio.load();
+        audio.play();
+        if (!isRotating) {
+            isRotating = true;
+            rotateDisc();
+        }
+    }
+
+    // Add ended event listener for auto-play next song
+    audio.addEventListener('ended', playNextTrack);
+
     // Play the first song from the shuffled playlist
     audioSource.src = shuffledPlaylist[0].parentElement.getAttribute('data-track');
     audio.load();
