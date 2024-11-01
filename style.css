@@ -72,14 +72,19 @@ canvas {
     background: #4e62aa;
 }
 
+/* Highlight the currently playing track */
+.current-track {
+    background: #4e62aa; /* Highlight color */
+}
+
 .hidden {
     display: none;
 }
 
 /* Disc Styles */
 .play-pause-button {
-    width: 100px;
-    height: 100px;
+    width: 80px; /* Changed from 100px to 80px */
+    height: 80px; /* Changed from 100px to 80px */
     margin: 20px auto;
     cursor: pointer;
     display: block;
@@ -95,7 +100,7 @@ canvas {
 }
 
 .rotating {
-    animation: spin 4s linear infinite;
+    animation: spin 13.33s linear infinite; /* Changed from 4s to 13.33s */
     animation-play-state: running;
 }
 
