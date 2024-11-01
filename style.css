@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+canvas {
+    background: linear-gradient(180deg, #006994, #003366);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.music-title {
+    color: #fff;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.audio-player {
+    width: 300px;
+    margin: 20px auto;
+    background: #ff0000;
+    border: 1px solid #aa0000;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.play-list {
+    width: 300px;
+    background: black;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.play-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.play-list::-webkit-scrollbar-track {
+    background: #222;
+    border-radius: 10px;
+}
+
+.play-list::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 10px;
+}
+
+.play-list::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+.play-list-row {
+    margin: 5px 0;
+}
+
+.playlist-track {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+    transition: background 0.3s;
+}
+
+.playlist-track:hover {
+    background: #4e62aa;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Disc Styles */
+.play-pause-button {
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    cursor: pointer;
+    display: block;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotating {
+    animation: spin 4s linear infinite;
+    animation-play-state: running;
+}
+
+.paused {
+    animation-play-state: paused;
+}
