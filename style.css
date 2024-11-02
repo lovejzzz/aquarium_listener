@@ -36,6 +36,10 @@ canvas {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     max-height: 300px;
     overflow-y: auto;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .play-list::-webkit-scrollbar {
@@ -66,15 +70,23 @@ canvas {
     display: block;
     padding: 5px;
     transition: background 0.3s;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
 }
 
+/* Hover effect on song names */
 .playlist-track:hover {
-    background: #4e62aa;
+    background: #333;
+    color: #fff;
 }
 
 /* Highlight the currently playing track */
-.current-track {
-    background: #4e62aa; /* Highlight color */
+.playlist-track.current-track {
+    background: #333; /* Same as hover background color */
+    color: #fff;
 }
 
 .hidden {
@@ -83,11 +95,15 @@ canvas {
 
 /* Disc Styles */
 .play-pause-button {
-    width: 80px; /* Changed from 100px to 80px */
-    height: 80px; /* Changed from 100px to 80px */
+    width: 80px;
+    height: 80px;
     margin: 20px auto;
     cursor: pointer;
     display: block;
+    user-select: none;           /* Prevent text selection */
+    -webkit-user-select: none;   /* For Safari */
+    -moz-user-select: none;      /* For Firefox */
+    -ms-user-select: none;       /* For IE10+ */
 }
 
 @keyframes spin {
@@ -100,7 +116,7 @@ canvas {
 }
 
 .rotating {
-    animation: spin 13.33s linear infinite; /* Changed from 4s to 13.33s */
+    animation: spin 13.33s linear infinite;
     animation-play-state: running;
 }
 
